@@ -1,0 +1,263 @@
+aid: port-io
+url: https://raw.githubusercontent.com/api-evangelist/port-io/refs/heads/main/apis.yml
+name: Port
+kind: company
+description: >-
+  Port is an Internal Developer Portal built around an API-first software
+  catalog, customizable blueprints and entities, self-service actions, and
+  scorecards. Platform teams model their own domain (services, environments,
+  pipelines, AI agents, cloud resources) as blueprints, ingest data from
+  integrations (GitHub, GitLab, AWS, Azure, GCP, Kubernetes, Datadog,
+  PagerDuty, Snyk, ServiceNow), and expose developer workflows as self-service
+  actions backed by GitHub Actions, GitLab pipelines, Jenkins, Argo, or
+  webhooks. Everything in Port - blueprints, entities, actions, runs,
+  scorecards, integrations, pages, webhooks, AI agents - is reachable via the
+  public REST API.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Internal Developer Portal
+  - Service Catalog
+  - Self-Service Actions
+  - Platform Engineering
+  - Scorecards
+  - Developer Experience
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - aid: port-io:rest-api
+    name: Port REST API
+    description: >-
+      Public REST API for the Port platform. Bearer-token authenticated
+      (3-hour tokens minted from Port credentials), with regional base URLs
+      for EU and US tenants. Body size capped at 1 MiB and every response
+      carries an X-Trace-Id header for support.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - REST API
+      - Platform
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+      - type: BaseURL
+        url: https://api.us.port.io
+  - aid: port-io:blueprints
+    name: Port Blueprints API
+    description: >-
+      Endpoints to create, read, update, and delete blueprints - the schemas
+      that define an organization's data model in the Port catalog (services,
+      environments, AI agents, cloud resources, etc.).
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Blueprints
+      - Schema
+      - Catalog
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:entities
+    name: Port Entities API
+    description: >-
+      Endpoints to create, search, update, and delete entities (instances of a
+      blueprint) in the Port catalog, plus bulk operations and relations.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Entities
+      - Catalog
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:actions
+    name: Port Actions API
+    description: >-
+      Endpoints to manage self-service actions on blueprints and entities -
+      day-2 operations, scaffolding, and workflows that developers run from
+      the Port UI or programmatically.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Actions
+      - Self-Service
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:action-runs
+    name: Port Action Runs API
+    description: >-
+      Endpoints to trigger action runs, fetch their status and logs, post
+      progress updates from external runners, and approve or reject pending
+      runs.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Action Runs
+      - Workflows
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:workflows
+    name: Port Workflows API
+    description: >-
+      Endpoints to define and orchestrate multi-step workflows that chain
+      Port actions, integration runs, and approvals.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Workflows
+      - Orchestration
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:scorecards
+    name: Port Scorecards API
+    description: >-
+      Endpoints to manage scorecards (production readiness, security, SLO
+      compliance, etc.) and query scores per entity.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Scorecards
+      - Quality
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:integrations
+    name: Port Integrations API
+    description: >-
+      Endpoints to register, configure, and ingest data from Port integrations
+      (Ocean), including resync, mapping configuration, and integration
+      lifecycle.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Integrations
+      - Ocean
+      - Ingestion
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:webhooks
+    name: Port Webhooks API
+    description: >-
+      Endpoints to register webhook subscriptions and to receive inbound
+      webhook events from upstream systems for ingestion into the Port
+      catalog.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Webhooks
+      - Events
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:teams-users
+    name: Port Teams and Users API
+    description: >-
+      Endpoints to manage teams, users, roles, and team-membership for the
+      Port organization.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Teams
+      - Users
+      - RBAC
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:audit
+    name: Port Audit API
+    description: >-
+      Endpoints to query Port audit logs for catalog, action, integration,
+      and administrative events.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Audit
+      - Compliance
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:ai-agents
+    name: Port AI and LLM Management API
+    description: >-
+      Endpoints to manage AI agents, prompts, memory, and LLM-driven
+      capabilities embedded in the Port platform.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - AI
+      - LLM
+      - Agents
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:pages
+    name: Port Pages, Apps, and Plugins API
+    description: >-
+      Endpoints to manage portal pages, apps, and plugin extensions that
+      compose the developer-facing surface of the Port IDP.
+    humanURL: https://docs.port.io/api-reference/port-api
+    baseURL: https://api.port.io
+    tags:
+      - Pages
+      - Apps
+      - Plugins
+    properties:
+      - type: Documentation
+        url: https://docs.port.io/api-reference/port-api
+  - aid: port-io:ocean
+    name: Port Ocean Integration Framework
+    description: >-
+      Open-source framework used to build Port integrations that ingest data
+      from third-party systems into the catalog. Maintained at
+      github.com/port-labs/ocean.
+    humanURL: https://github.com/port-labs/ocean
+    baseURL: https://github.com/port-labs/ocean
+    tags:
+      - Open Source
+      - Integrations
+      - Framework
+    properties:
+      - type: Repository
+        url: https://github.com/port-labs/ocean
+common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/getport
+  - type: Website
+    url: https://www.port.io/
+  - type: Documentation
+    url: https://docs.port.io/
+  - type: GitHub
+    url: https://github.com/port-labs
+  - type: Plans
+    url: plans/port-io-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/port-io-rate-limits.yml
+  - type: FinOps
+    url: finops/port-io-finops.yml
+  - type: Integrations
+    url: https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/
+integrations:
+  - name: GitHub
+  - name: GitLab
+  - name: Bitbucket
+  - name: Azure DevOps
+  - name: AWS
+  - name: Azure
+  - name: GCP
+  - name: Kubernetes
+  - name: ArgoCD
+  - name: Datadog
+  - name: PagerDuty
+  - name: Opsgenie
+  - name: Snyk
+  - name: SonarQube
+  - name: ServiceNow
+  - name: Jira
+  - name: Slack
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
