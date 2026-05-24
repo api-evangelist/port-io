@@ -1,0 +1,226 @@
+openapi: 3.1.0
+info:
+  title: Port REST API
+  description: |
+    Port is an Internal Developer Portal built around an API-first software
+    catalog. This OpenAPI definition covers a representative subset of the
+    Port REST API for managing blueprints and entities in the catalog.
+    Derived from public documentation at https://docs.port.io/api-reference/port-api.
+  version: "1.0.0"
+  contact:
+    name: Port
+    url: https://docs.port.io/api-reference/port-api
+servers:
+  - url: https://api.port.io
+    description: Europe region
+  - url: https://api.us.port.io
+    description: United States region
+security:
+  - BearerAuth: []
+tags:
+  - name: Blueprints
+    description: Manage blueprint definitions in the software catalog.
+  - name: Entities
+    description: Manage catalog entities created from blueprints.
+paths:
+  /v1/blueprints:
+    post:
+      tags: [Blueprints]
+      summary: Create a blueprint
+      description: Creates a new blueprint definition in your software catalog.
+      operationId: createBlueprint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Blueprint'
+      responses:
+        '201':
+          description: Blueprint created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blueprint'
+    get:
+      tags: [Blueprints]
+      summary: List blueprints
+      operationId: listBlueprints
+      responses:
+        '200':
+          description: A list of blueprints
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  blueprints:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Blueprint'
+  /v1/blueprints/{blueprint_identifier}/entities:
+    parameters:
+      - $ref: '#/components/parameters/BlueprintIdentifier'
+    post:
+      tags: [Entities]
+      summary: Create an entity
+      description: Creates an entity in the software catalog based on an existing blueprint.
+      operationId: createEntity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+      responses:
+        '201':
+          description: Entity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+    get:
+      tags: [Entities]
+      summary: Get all entities of a blueprint
+      operationId: listEntities
+      responses:
+        '200':
+          description: A list of entities for the blueprint
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entity'
+  /v1/blueprints/{blueprint_identifier}/entities/{entity_identifier}:
+    parameters:
+      - $ref: '#/components/parameters/BlueprintIdentifier'
+      - $ref: '#/components/parameters/EntityIdentifier'
+    get:
+      tags: [Entities]
+      summary: Get an entity
+      operationId: getEntity
+      responses:
+        '200':
+          description: The requested entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+    patch:
+      tags: [Entities]
+      summary: Update an entity
+      operationId: updateEntity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+      responses:
+        '200':
+          description: Entity updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+    delete:
+      tags: [Entities]
+      summary: Delete an entity
+      operationId: deleteEntity
+      responses:
+        '204':
+          description: Entity deleted
+  /v1/entities/search:
+    post:
+      tags: [Entities]
+      summary: Search entities across blueprints
+      operationId: searchEntities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rules:
+                  type: array
+                  items:
+                    type: object
+                combinator:
+                  type: string
+                  enum: [and, or]
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  entities:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Entity'
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Port uses bearer tokens obtained from the Port application credentials panel.
+        Tokens remain valid for 3 hours.
+  parameters:
+    BlueprintIdentifier:
+      name: blueprint_identifier
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier of the blueprint.
+    EntityIdentifier:
+      name: entity_identifier
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier of the entity.
+  schemas:
+    Blueprint:
+      type: object
+      properties:
+        identifier:
+          type: string
+        title:
+          type: string
+        icon:
+          type: string
+        schema:
+          type: object
+        relations:
+          type: object
+      required:
+        - identifier
+    Entity:
+      type: object
+      properties:
+        identifier:
+          type: string
+        title:
+          type: string
+        blueprint:
+          type: string
+        properties:
+          type: object
+        relations:
+          type: object
+        team:
+          type: array
+          items:
+            type: string
+      required:
+        - identifier
