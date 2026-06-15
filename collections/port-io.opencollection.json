@@ -1,0 +1,194 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Port REST API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blueprints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List blueprints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.port.io/v1/blueprints"
+          },
+          "docs": "List blueprints"
+        },
+        {
+          "info": {
+            "name": "Create a blueprint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.port.io/v1/blueprints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new blueprint definition in your software catalog."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Entities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all entities of a blueprint",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.port.io/v1/blueprints/:blueprint_identifier/entities",
+            "params": [
+              {
+                "name": "blueprint_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the blueprint."
+              }
+            ]
+          },
+          "docs": "Get all entities of a blueprint"
+        },
+        {
+          "info": {
+            "name": "Create an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.port.io/v1/blueprints/:blueprint_identifier/entities",
+            "params": [
+              {
+                "name": "blueprint_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the blueprint."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an entity in the software catalog based on an existing blueprint."
+        },
+        {
+          "info": {
+            "name": "Get an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.port.io/v1/blueprints/:blueprint_identifier/entities/:entity_identifier",
+            "params": [
+              {
+                "name": "blueprint_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the blueprint."
+              },
+              {
+                "name": "entity_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the entity."
+              }
+            ]
+          },
+          "docs": "Get an entity"
+        },
+        {
+          "info": {
+            "name": "Update an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.port.io/v1/blueprints/:blueprint_identifier/entities/:entity_identifier",
+            "params": [
+              {
+                "name": "blueprint_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the blueprint."
+              },
+              {
+                "name": "entity_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the entity."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an entity"
+        },
+        {
+          "info": {
+            "name": "Delete an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.port.io/v1/blueprints/:blueprint_identifier/entities/:entity_identifier",
+            "params": [
+              {
+                "name": "blueprint_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the blueprint."
+              },
+              {
+                "name": "entity_identifier",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier of the entity."
+              }
+            ]
+          },
+          "docs": "Delete an entity"
+        },
+        {
+          "info": {
+            "name": "Search entities across blueprints",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.port.io/v1/entities/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search entities across blueprints"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
