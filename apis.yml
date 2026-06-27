@@ -240,7 +240,7 @@ common:
     url: finops/port-io-finops.yml
   - type: Integrations
     url: https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.port.io/llms.txt
 integrations:
   - name: GitHub
