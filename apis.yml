@@ -224,6 +224,14 @@ apis:
       - type: Repository
         url: https://github.com/port-labs/ocean
 common:
+  - type: TrustCenter
+    url: security/port-io-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/port-io-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/port-io-domain-security.yml
+  - type: Authentication
+    url: authentication/port-io-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/getport
   - type: Website
@@ -260,6 +268,8 @@ integrations:
   - name: ServiceNow
   - name: Jira
   - name: Slack
+  - url: https://www.port.io/blog
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

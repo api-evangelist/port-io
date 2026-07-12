@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/port-io-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  description: |-
+    Port uses bearer tokens obtained from the Port application credentials panel.
+    Tokens remain valid for 3 hours.
+  sources:
+  - openapi/port-io-openapi.yml
