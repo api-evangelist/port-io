@@ -1,0 +1,14 @@
+{
+  "repo": "port-io",
+  "feeds": [
+    {
+      "source": "https://www.port.io/blog",
+      "feed_url": "https://www.port.io/blog/rss.xml",
+      "title": "",
+      "saved": 6,
+      "method": "discovered"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 40
+}
