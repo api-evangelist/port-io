@@ -224,6 +224,8 @@ apis:
       - type: Repository
         url: https://github.com/port-labs/ocean
 common:
+  - type: AgenticAccess
+    url: agentic-access/port-io-agentic-access.yml
   - type: TrustCenter
     url: security/port-io-trust-center.yml
   - type: VulnerabilityDisclosure
