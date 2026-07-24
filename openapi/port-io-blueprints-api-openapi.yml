@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: Port REST Blueprints API
+  description: 'Port is an Internal Developer Portal built around an API-first software
+
+    catalog. This OpenAPI definition covers a representative subset of the
+
+    Port REST API for managing blueprints and entities in the catalog.
+
+    Derived from public documentation at https://docs.port.io/api-reference/port-api.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Port
+    url: https://docs.port.io/api-reference/port-api
+servers:
+- url: https://api.port.io
+  description: Europe region
+- url: https://api.us.port.io
+  description: United States region
+security:
+- BearerAuth: []
+tags:
+- name: Blueprints
+  description: Manage blueprint definitions in the software catalog.
+paths:
+  /v1/blueprints:
+    post:
+      tags:
+      - Blueprints
+      summary: Create a blueprint
+      description: Creates a new blueprint definition in your software catalog.
+      operationId: createBlueprint
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Blueprint'
+      responses:
+        '201':
+          description: Blueprint created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blueprint'
+    get:
+      tags:
+      - Blueprints
+      summary: List blueprints
+      operationId: listBlueprints
+      responses:
+        '200':
+          description: A list of blueprints
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  blueprints:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Blueprint'
+components:
+  schemas:
+    Blueprint:
+      type: object
+      properties:
+        identifier:
+          type: string
+        title:
+          type: string
+        icon:
+          type: string
+        schema:
+          type: object
+        relations:
+          type: object
+      required:
+      - identifier
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: 'Port uses bearer tokens obtained from the Port application credentials panel.
+
+        Tokens remain valid for 3 hours.
+
+        '
