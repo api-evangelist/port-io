@@ -1,0 +1,16 @@
+{
+  "provider": "port-io",
+  "sources": [
+    "port-io-blueprints-api-openapi.yml",
+    "port-io-entities-api-openapi.yml"
+  ],
+  "outputs": [
+    "port-io-blueprints-api-openapi.yml",
+    "port-io-entities-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
