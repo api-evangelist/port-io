@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Port REST Blueprints API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blueprints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List blueprints",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.port.io/v1/blueprints"
+          },
+          "docs": "List blueprints"
+        },
+        {
+          "info": {
+            "name": "Create a blueprint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.port.io/v1/blueprints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new blueprint definition in your software catalog."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

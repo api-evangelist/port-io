@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "2b6110ca-a09b-4f8d-b75a-10c27b1e6ffc",
+      "name": "Blueprints",
+      "description": {
+        "content": "Manage blueprint definitions in the software catalog.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f3d647a0-16e9-45cc-976a-c5e82132054f",
+          "name": "Create a blueprint",
+          "request": {
+            "name": "Create a blueprint",
+            "description": {
+              "content": "Creates a new blueprint definition in your software catalog.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "blueprints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"relations\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d9ff99a1-0793-4ec9-8ed9-65ddd2d95bbc",
+              "name": "Blueprint created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"icon\": \"<string>\",\n  \"schema\": \"<object>\",\n  \"relations\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"title\": \"string\",\n  \"icon\": \"string\",\n  \"schema\": {},\n  \"relations\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be9c976e-fe06-4507-ad32-39e9988f1d32",
+          "name": "List blueprints",
+          "request": {
+            "name": "List blueprints",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blueprints"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57dbab29-5d74-47d6-a2a8-6269b6e760bc",
+              "name": "A list of blueprints",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"blueprints\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"icon\": \"string\",\n      \"schema\": {},\n      \"relations\": {}\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"icon\": \"string\",\n      \"schema\": {},\n      \"relations\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.port.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f7e17131-e3a7-4712-81d3-34297c862492",
+    "name": "Port REST Blueprints API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Port is an Internal Developer Portal built around an API-first software\ncatalog. This OpenAPI definition covers a representative subset of the\nPort REST API for managing blueprints and entities in the catalog.\nDerived from public documentation at https://docs.port.io/api-reference/port-api.\n\n\nContact Support:\n Name: Port",
+      "type": "text/plain"
+    }
+  }
+}

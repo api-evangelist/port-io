@@ -1,0 +1,709 @@
+{
+  "item": [
+    {
+      "id": "b03b97e8-2e4e-4db7-bdb2-ea13938a20ea",
+      "name": "Entities",
+      "description": {
+        "content": "Manage catalog entities created from blueprints.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5dd40304-ab36-4836-a0c8-b09ad9b63676",
+          "name": "Create an entity",
+          "request": {
+            "name": "Create an entity",
+            "description": {
+              "content": "Creates an entity in the software catalog based on an existing blueprint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "blueprints",
+                ":blueprint_identifier",
+                "entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blueprint_identifier",
+                  "description": "(Required) Unique identifier of the blueprint."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"blueprint\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"relations\": \"<object>\",\n  \"team\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7433df9f-dde6-438c-853c-c7fd92e9d41c",
+              "name": "Entity created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints",
+                    ":blueprint_identifier",
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blueprint_identifier",
+                      "description": "(Required) Unique identifier of the blueprint."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"blueprint\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"relations\": \"<object>\",\n  \"team\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"title\": \"string\",\n  \"blueprint\": \"string\",\n  \"properties\": {},\n  \"relations\": {},\n  \"team\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38bb106a-a8cd-4514-899e-215bbb391725",
+          "name": "Get all entities of a blueprint",
+          "request": {
+            "name": "Get all entities of a blueprint",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blueprints",
+                ":blueprint_identifier",
+                "entities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blueprint_identifier",
+                  "description": "(Required) Unique identifier of the blueprint."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b59149f-0e14-4cbb-ab1c-c17c69a68bca",
+              "name": "A list of entities for the blueprint",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints",
+                    ":blueprint_identifier",
+                    "entities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blueprint_identifier",
+                      "description": "(Required) Unique identifier of the blueprint."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entities\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"blueprint\": \"string\",\n      \"properties\": {},\n      \"relations\": {},\n      \"team\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"blueprint\": \"string\",\n      \"properties\": {},\n      \"relations\": {},\n      \"team\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04571164-291e-4ab4-b9f9-3c571cef21e4",
+          "name": "Get an entity",
+          "request": {
+            "name": "Get an entity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blueprints",
+                ":blueprint_identifier",
+                "entities",
+                ":entity_identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blueprint_identifier",
+                  "description": "(Required) Unique identifier of the blueprint."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entity_identifier",
+                  "description": "(Required) Unique identifier of the entity."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "74fbf47c-735b-4fd7-884b-23ac497a3348",
+              "name": "The requested entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints",
+                    ":blueprint_identifier",
+                    "entities",
+                    ":entity_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blueprint_identifier",
+                      "description": "(Required) Unique identifier of the blueprint."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entity_identifier",
+                      "description": "(Required) Unique identifier of the entity."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"title\": \"string\",\n  \"blueprint\": \"string\",\n  \"properties\": {},\n  \"relations\": {},\n  \"team\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc633f0b-4a68-40b5-8f33-1e097004e1ab",
+          "name": "Update an entity",
+          "request": {
+            "name": "Update an entity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blueprints",
+                ":blueprint_identifier",
+                "entities",
+                ":entity_identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blueprint_identifier",
+                  "description": "(Required) Unique identifier of the blueprint."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entity_identifier",
+                  "description": "(Required) Unique identifier of the entity."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"blueprint\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"relations\": \"<object>\",\n  \"team\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3a115f0c-8b07-4aad-be3d-73a56c98d56b",
+              "name": "Entity updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints",
+                    ":blueprint_identifier",
+                    "entities",
+                    ":entity_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blueprint_identifier",
+                      "description": "(Required) Unique identifier of the blueprint."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entity_identifier",
+                      "description": "(Required) Unique identifier of the entity."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifier\": \"<string>\",\n  \"title\": \"<string>\",\n  \"blueprint\": \"<string>\",\n  \"properties\": \"<object>\",\n  \"relations\": \"<object>\",\n  \"team\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"identifier\": \"string\",\n  \"title\": \"string\",\n  \"blueprint\": \"string\",\n  \"properties\": {},\n  \"relations\": {},\n  \"team\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f872ced-b3d1-4eaf-921a-752b26f37875",
+          "name": "Delete an entity",
+          "request": {
+            "name": "Delete an entity",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "blueprints",
+                ":blueprint_identifier",
+                "entities",
+                ":entity_identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "blueprint_identifier",
+                  "description": "(Required) Unique identifier of the blueprint."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entity_identifier",
+                  "description": "(Required) Unique identifier of the entity."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1bf8c37c-316c-4e84-9b37-21d243596d7a",
+              "name": "Entity deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "blueprints",
+                    ":blueprint_identifier",
+                    "entities",
+                    ":entity_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "blueprint_identifier",
+                      "description": "(Required) Unique identifier of the blueprint."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entity_identifier",
+                      "description": "(Required) Unique identifier of the entity."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2e3eee33-dce7-40ad-a25a-f3e7da43760a",
+          "name": "Search entities across blueprints",
+          "request": {
+            "name": "Search entities across blueprints",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "entities",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rules\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"combinator\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "295c6d75-0ac1-442a-bdea-198faf9e761d",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "entities",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"rules\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"combinator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"entities\": [\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"blueprint\": \"string\",\n      \"properties\": {},\n      \"relations\": {},\n      \"team\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"identifier\": \"string\",\n      \"title\": \"string\",\n      \"blueprint\": \"string\",\n      \"properties\": {},\n      \"relations\": {},\n      \"team\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.port.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "37082958-ecfa-4fe7-b6e2-cbd4711a7942",
+    "name": "Port REST Blueprints Entities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Port is an Internal Developer Portal built around an API-first software\ncatalog. This OpenAPI definition covers a representative subset of the\nPort REST API for managing blueprints and entities in the catalog.\nDerived from public documentation at https://docs.port.io/api-reference/port-api.\n\n\nContact Support:\n Name: Port",
+      "type": "text/plain"
+    }
+  }
+}
