@@ -141,6 +141,10 @@ apis:
   humanURL: https://docs.port.io/api-reference/port-api
   baseURL: https://api.port.io
   tags:
+  - Integration
+  - Ocean
+  - Ingestion
+  tags_raw:
   - Integrations
   - Ocean
   - Ingestion
@@ -155,6 +159,9 @@ apis:
   humanURL: https://docs.port.io/api-reference/port-api
   baseURL: https://api.port.io
   tags:
+  - Webhook
+  - Event
+  tags_raw:
   - Webhooks
   - Events
   properties:
@@ -166,6 +173,10 @@ apis:
   humanURL: https://docs.port.io/api-reference/port-api
   baseURL: https://api.port.io
   tags:
+  - Team
+  - User
+  - RBAC
+  tags_raw:
   - Teams
   - Users
   - RBAC
@@ -191,6 +202,10 @@ apis:
   humanURL: https://docs.port.io/api-reference/port-api
   baseURL: https://api.port.io
   tags:
+  - Artificial Intelligence
+  - LLM
+  - Agents
+  tags_raw:
   - AI
   - LLM
   - Agents
@@ -206,6 +221,10 @@ apis:
   baseURL: https://api.port.io
   tags:
   - Pages
+  - Application
+  - Plugins
+  tags_raw:
+  - Pages
   - Apps
   - Plugins
   properties:
@@ -219,6 +238,10 @@ apis:
   humanURL: https://github.com/port-labs/ocean
   baseURL: https://github.com/port-labs/ocean
   tags:
+  - Open-Source
+  - Integration
+  - Framework
+  tags_raw:
   - Open Source
   - Integrations
   - Framework
