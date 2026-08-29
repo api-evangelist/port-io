@@ -13,6 +13,20 @@ description: >-
   webhooks. Everything in Port - blueprints, entities, actions, runs,
   scorecards, integrations, pages, webhooks, AI agents - is reachable via the
   public REST API.
+deliveryModel:
+  model: open-core
+  license: Apache-2.0
+  open_source: true
+  commercial: true
+  callable_host: true
+  label: Open core · an OSS project plus a commercial hosted product
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
@@ -269,6 +283,14 @@ apis:
   - type: OpenAPI
     url: openapi/port-io-entities-api-openapi.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/port-labs/ocean/issues
+  - type: Releases
+    url: https://github.com/port-labs/ocean/releases
+  - type: SecurityPolicy
+    url: https://github.com/port-labs/ocean/blob/main/SECURITY.md
+  - type: ContributionGuide
+    url: https://github.com/port-labs/ocean/blob/main/CONTRIBUTING.md
   - type: License
     name: Apache-2.0
     url: https://github.com/port-labs/ocean/blob/main/LICENSE
