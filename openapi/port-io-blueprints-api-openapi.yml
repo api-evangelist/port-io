@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Port REST Blueprints API
   description: 'Port is an Internal Developer Portal built around an API-first software
@@ -7,9 +7,7 @@ info:
 
     Port REST API for managing blueprints and entities in the catalog.
 
-    Derived from public documentation at https://docs.port.io/api-reference/port-api.
-
-    '
+    Derived from public documentation at https://docs.port.io/api-reference/port-api.'
   version: 1.0.0
   contact:
     name: Port

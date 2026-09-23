@@ -1,8 +1,7 @@
 {
   "provider": "port-io",
   "sources": [
-    "port-io-blueprints-api-openapi.yml",
-    "port-io-entities-api-openapi.yml"
+    "_original/port-io-openapi.yml"
   ],
   "outputs": [
     "port-io-blueprints-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "port-io-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "port-io-blueprints-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "port-io-entities-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
