@@ -253,13 +253,14 @@ apis:
   humanURL: https://github.com/port-labs/ocean
   baseURL: https://github.com/port-labs/ocean
   tags:
-  - Open-Source
+  - Open Source
   - Integration
   - Framework
   tags_raw:
   - Open Source
   - Integrations
   - Framework
+  - Open-Source
   properties:
   - type: Repository
     url: https://github.com/port-labs/ocean
