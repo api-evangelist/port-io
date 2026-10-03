@@ -139,6 +139,21 @@ paths:
                     items:
                       $ref: '#/components/schemas/Entity'
 components:
+  parameters:
+    EntityIdentifier:
+      name: entity_identifier
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier of the entity.
+    BlueprintIdentifier:
+      name: blueprint_identifier
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Unique identifier of the blueprint.
   schemas:
     Entity:
       type: object
@@ -159,21 +174,6 @@ components:
             type: string
       required:
       - identifier
-  parameters:
-    BlueprintIdentifier:
-      name: blueprint_identifier
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Unique identifier of the blueprint.
-    EntityIdentifier:
-      name: entity_identifier
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Unique identifier of the entity.
   securitySchemes:
     BearerAuth:
       type: http
