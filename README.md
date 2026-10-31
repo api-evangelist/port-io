@@ -1,4 +1,4 @@
-# Port (port-io)
+# Port
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,296 +66,150 @@
 
 Port is an Internal Developer Portal built around an API-first software catalog, customizable blueprints and entities, self-service actions, and scorecards. Platform teams model their own domain (services, environments, pipelines, AI agents, cloud resources) as blueprints, ingest data from integrations (GitHub, GitLab, AWS, Azure, GCP, Kubernetes, Datadog, PagerDuty, Snyk, ServiceNow), and expose developer workflows as self-service actions backed by GitHub Actions, GitLab pipelines, Jenkins, Argo, or webhooks. Everything in Port - blueprints, entities, actions, runs, scorecards, integrations, pages, webhooks, AI agents - is reachable via the public REST API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/port-io/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/port-io/refs/heads/main/apis.yml)
+**Areas:** Internal Developer Portal · Service Catalog · Self-Service Actions · Platform Engineering · Scorecards · Developer Experience · Developer Portal
 
-## Tags
+## Port on APIs.io
 
-- Internal Developer Portal
-- Service Catalog
-- Self-Service Actions
-- Platform Engineering
-- Scorecards
-- Developer Experience
+Everything profiled for Port is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/port-io/](https://apis.io/providers/port-io/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (32)
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+- [Port REST API](https://apis.io/apis/port-io/rest-api/) — Public REST API for the Port platform. Bearer-token authenticated (3-hour tokens minted from Port credentials), with regional base URLs for EU and US…
+- [Port Blueprints API](https://apis.io/apis/port-io/blueprints/) — Endpoints to create, read, update, and delete blueprints - the schemas that define an organization's data model in the Port catalog (services, environments,…
+- [Port Entities API](https://apis.io/apis/port-io/entities/) — Endpoints to create, search, update, and delete entities (instances of a blueprint) in the Port catalog, plus bulk operations and relations.
+- [Port Actions API](https://apis.io/apis/port-io/actions/) — Endpoints to manage self-service actions on blueprints and entities - day-2 operations, scaffolding, and workflows that developers run from the Port UI or…
+- [Port Action Runs API](https://apis.io/apis/port-io/action-runs/) — Endpoints to trigger action runs, fetch their status and logs, post progress updates from external runners, and approve or reject pending runs.
+- [Port Workflows API](https://apis.io/apis/port-io/workflows/) — Endpoints to define and orchestrate multi-step workflows that chain Port actions, integration runs, and approvals.
+- [Port Scorecards API](https://apis.io/apis/port-io/scorecards/) — Endpoints to manage scorecards (production readiness, security, SLO compliance, etc.) and query scores per entity.
+- [Port Integrations API](https://apis.io/apis/port-io/integrations/) — Endpoints to register, configure, and ingest data from Port integrations (Ocean), including resync, mapping configuration, and integration lifecycle.
+- [Port Webhooks API](https://apis.io/apis/port-io/webhooks/) — Endpoints to register webhook subscriptions and to receive inbound webhook events from upstream systems for ingestion into the Port catalog.
+- [Port Teams and Users API](https://apis.io/apis/port-io/teams-users/) — Endpoints to manage teams, users, roles, and team-membership for the Port organization.
+- [Port Audit API](https://apis.io/apis/port-io/audit/) — Endpoints to query Port audit logs for catalog, action, integration, and administrative events.
+- [Port AI and LLM Management API](https://apis.io/apis/port-io/ai-agents/) — Endpoints to manage AI agents, prompts, memory, and LLM-driven capabilities embedded in the Port platform.
+- [Port Pages, Apps, and Plugins API](https://apis.io/apis/port-io/pages/) — Endpoints to manage portal pages, apps, and plugin extensions that compose the developer-facing surface of the Port IDP.
+- [Port Ocean Integration Framework](https://apis.io/apis/port-io/ocean/) — Open-source framework used to build Port integrations that ingest data from third-party systems into the catalog. Maintained at github.com/port-labs/ocean.
+- [Port Blueprints API](https://apis.io/apis/port-io/port-io-blueprints-api/) — Manage blueprint definitions in the software catalog.
+- [Port Entities API](https://apis.io/apis/port-io/port-io-entities-api/) — Manage catalog entities created from blueprints.
+- [Port Action Runs API](https://apis.io/apis/port-io/port-io-action-runs-api/) — The Action Runs API from Port — 6 operation(s) for action runs.
+- [Port Actions API](https://apis.io/apis/port-io/port-io-actions-api/) — The Actions API from Port — 5 operation(s) for actions.
+- [Port AI API](https://apis.io/apis/port-io/port-io-ai-api/) — The AI API from Port — 1 operation(s) for ai.
+- [Port Apps API](https://apis.io/apis/port-io/port-io-apps-api/) — The Apps API from Port — 3 operation(s) for apps.
+- [Port Audit API](https://apis.io/apis/port-io/port-io-audit-api/) — The Audit API from Port — 1 operation(s) for audit.
+- [Port Authentication / Authorization API](https://apis.io/apis/port-io/port-io-authentication-authorization-api/) — The Authentication / Authorization API from Port — 2 operation(s) for authentication / authorization.
+- [Port Folders API](https://apis.io/apis/port-io/port-io-folders-api/) — The Folders API from Port — 2 operation(s) for folders.
+- [Port Integrations API](https://apis.io/apis/port-io/port-io-integrations-api/) — The Integrations API from Port — 4 operation(s) for integrations.
+- [Port Migrations API](https://apis.io/apis/port-io/port-io-migrations-api/) — The Migrations API from Port — 3 operation(s) for migrations.
+- [Port Organization API](https://apis.io/apis/port-io/port-io-organization-api/) — The Organization API from Port — 3 operation(s) for organization.
+- [Port Pages API](https://apis.io/apis/port-io/port-io-pages-api/) — The Pages API from Port — 8 operation(s) for pages.
+- [Port Scorecard Groups API](https://apis.io/apis/port-io/port-io-scorecard-groups-api/) — The Scorecard Groups API from Port — 3 operation(s) for scorecard groups.
+- [Port Scorecards API](https://apis.io/apis/port-io/port-io-scorecards-api/) — The Scorecards API from Port — 3 operation(s) for scorecards.
+- [Port Teams API](https://apis.io/apis/port-io/port-io-teams-api/) — The Teams API from Port — 2 operation(s) for teams.
+- [Port Users API](https://apis.io/apis/port-io/port-io-users-api/) — The Users API from Port — 5 operation(s) for users.
+- [Port Webhook API](https://apis.io/apis/port-io/port-io-webhook-api/) — The Webhook API from Port — 3 operation(s) for webhook.
 
-## APIs
+### Published properties
 
-### Port REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Public REST API for the Port platform. Bearer-token authenticated (3-hour tokens minted from Port credentials), with regional base URLs for EU and US tenants. Body size capped at 1 MiB and every response carries an X-Trace-Id header for support.
+#### Agentic access (1)
 
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Port Io Agentic Access](https://apis.io/agentic-access/port-io/port-io-agentic-access/)
 
-- REST API
-- Platform
+#### Collections (3)
 
-#### Properties
+Postman and Open Collection request collections.
 
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Base U R L](https://api.us.port.io)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Port REST API](https://apis.io/collections/port-io/open-port-io/)
+- [Port REST Blueprints API](https://apis.io/collections/port-io/open-port-io-blueprints-api/)
+- [Port REST Blueprints Entities API](https://apis.io/collections/port-io/open-port-io-entities-api/)
 
-### Port Blueprints API
+#### Security (4)
 
-Endpoints to create, read, update, and delete blueprints - the schemas that define an organization's data model in the Port catalog (services, environments, AI agents, cloud resources, etc.).
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
+- [Port Io Authentication](https://apis.io/security/port-io/port-io-authentication/)
+- [Port Io Domain Security](https://apis.io/security/port-io/port-io-domain-security/)
+- [Port Io Trust Center](https://apis.io/security/port-io/port-io-trust-center/)
+- [Port Io Vulnerability Disclosure](https://apis.io/security/port-io/port-io-vulnerability-disclosure/)
 
-#### Tags
+#### Plans and pricing (1)
 
-- Blueprints
-- Schema
-- Catalog
+Published plans, tiers and prices.
 
-#### Properties
+- [Port Io Plans Pricing](https://apis.io/plans/port-io/port-io-plans-pricing/)
 
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Rate limits (1)
 
-### Port Entities API
+Published request limits.
 
-Endpoints to create, search, update, and delete entities (instances of a blueprint) in the Port catalog, plus bulk operations and relations.
+- [Port Io Rate Limits](https://apis.io/rate-limits/port-io/port-io-rate-limits/)
 
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
+#### FinOps (1)
 
-#### Tags
+What the API costs to run, by operation.
 
-- Entities
-- Catalog
+- [Port Io Finops](https://apis.io/finops/port-io/port-io-finops/)
 
-#### Properties
+## Where to find this API
 
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-### Port Actions API
-
-Endpoints to manage self-service actions on blueprints and entities - day-2 operations, scaffolding, and workflows that developers run from the Port UI or programmatically.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Actions
-- Self-Service
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Action Runs API
-
-Endpoints to trigger action runs, fetch their status and logs, post progress updates from external runners, and approve or reject pending runs.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Action Runs
-- Workflows
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Workflows API
-
-Endpoints to define and orchestrate multi-step workflows that chain Port actions, integration runs, and approvals.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Workflows
-- Orchestration
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Scorecards API
-
-Endpoints to manage scorecards (production readiness, security, SLO compliance, etc.) and query scores per entity.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Scorecards
-- Quality
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Integrations API
-
-Endpoints to register, configure, and ingest data from Port integrations (Ocean), including resync, mapping configuration, and integration lifecycle.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Integrations
-- Ocean
-- Ingestion
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Webhooks API
-
-Endpoints to register webhook subscriptions and to receive inbound webhook events from upstream systems for ingestion into the Port catalog.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Webhooks
-- Events
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Teams and Users API
-
-Endpoints to manage teams, users, roles, and team-membership for the Port organization.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Teams
-- Users
-- RBAC
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Audit API
-
-Endpoints to query Port audit logs for catalog, action, integration, and administrative events.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Audit
-- Compliance
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port AI and LLM Management API
-
-Endpoints to manage AI agents, prompts, memory, and LLM-driven capabilities embedded in the Port platform.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- AI
-- LLM
-- Agents
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Pages, Apps, and Plugins API
-
-Endpoints to manage portal pages, apps, and plugin extensions that compose the developer-facing surface of the Port IDP.
-
-- **Human URL:** [https://docs.port.io/api-reference/port-api](https://docs.port.io/api-reference/port-api)
-- **Base URL:** `https://api.port.io`
-
-#### Tags
-
-- Pages
-- Apps
-- Plugins
-
-#### Properties
-
-- [Documentation](https://docs.port.io/api-reference/port-api)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Port Ocean Integration Framework
-
-Open-source framework used to build Port integrations that ingest data from third-party systems into the catalog. Maintained at github.com/port-labs/ocean.
-
-- **Human URL:** [https://github.com/port-labs/ocean](https://github.com/port-labs/ocean)
-- **Base URL:** `https://github.com/port-labs/ocean`
-
-#### Tags
-
-- Open Source
-- Integrations
-- Framework
-
-#### Properties
-
-- [Repository](https://github.com/port-labs/ocean)
-- [Postman Collection](collections/port-io.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/port-io.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/getport)
 - [Website](https://www.port.io/)
 - [Documentation](https://docs.port.io/)
-- [Git Hub](https://github.com/port-labs)
-- [Plans](plans/port-io-plans-pricing.yml)
-- [Rate Limits](rate-limits/port-io-rate-limits.yml)
-- [Fin Ops](finops/port-io-finops.yml)
-- [Integrations](https://docs.port.io/build-your-software-catalog/sync-data-to-catalog/)
-- [L L Ms Txt](https://docs.port.io/llms.txt)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 26.0** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 13.2 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/port-io/](https://apis.io/providers/port-io/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Port: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/port-io/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
